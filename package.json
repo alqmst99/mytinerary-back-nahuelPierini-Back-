@@ -1,0 +1,25 @@
+{
+  "name": "travelback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "main": "server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-/issues"
+  },
+  "homepage": "https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-#readme",
+  "dependencies": {
+    "Express": "^3.0.1"
+  }
+}
