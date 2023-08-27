@@ -1,26 +1,27 @@
 {
   "name": "travelback",
   "version": "1.0.0",
-  "description": "backend created in node express and use date base no-relacional Mongo and framework mogoose",
+  "description": "backend created in node and express, use data base Mongo and mongoose",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Pierini Nahuel Nicolas",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-/issues"
   },
   "homepage": "https://github.com/alqmst99/mytinerary-back-nahuelPierini-Back-#readme",
   "dependencies": {
-    "express": "npm:Express@^3.0.1",
-    "Express": "^3.0.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.5"
   }
 }
