@@ -1,23 +1,43 @@
 import express from "express"
+
+import indexRouter from "./router/indexRouter.js"
 import './database/database.js'
 import cors from "cors"
 import 'dotenv/config.js'
-import indexRouter from "./router/indexRouter.js"
+
 //generate the aplication
 const server= express();
+
+//CORS and express
+var corsOptions = {
+    origin: 'http://localhost:5173'
+}
+server.use(cors(corsOptions))
+server.use(express.json({ extended: true }))
+server.use(express.urlencoded())
+
 //listener server
-server.listen(process.env['PORT'], ()=>console.log('service ' + PORT))
-server.use('/api', indexRouter.js)
-server.listen(3000, ()=>{
+
+server.use('/api', indexRouter)
+
     console.log('serverON')
-    server.listen(3000, ()=> {
+    server.listen(process.env['PORT'], ()=> {
         server.get('/', (req, res, next)=>{
             try {
                 res.send('welcome to the server')
+                res.json({
+                    process: "andujo",
+                    sucess: true,
+                    error: null
+                })
             } catch (error) {
                 console.log('error conecction')
-                
-            }
-        })
+                res.json({
+                    process: "no andujo",
+                    sucess: false,
+                    error
+                })
+        }
     })
 })
+
