@@ -10,9 +10,19 @@ getAllCities: async (req, res, next)=>{
         error: null
     })
 },
+getCity: async (req, res, next)=>{
+    const allCities = await city.findbyId(id)
+    console.log(allCities)
+    res.json({
+        response: City,
+        success: true,
+        error: null
+    })
+},
 
 createCity: async (req, res, next)=>{
-
+    const { id } = req.params
+    const { name } = req.body
     try {
         req.body
         console.log(req.body)
@@ -31,7 +41,52 @@ createCity: async (req, res, next)=>{
         error
     })
 }
+},
+updateCity: async (req, res, next)=>{
+    const { id } = req.params
+   
+    try {
+        req.body
+        console.log(req.body)
+      const newCity = await city.findOneAndUpdate({_id: id}, req.body, {new:true})
+   
+    res.json({
+        response: UpdateCity,
+        success: true,
+        error: null
+    })
+    } catch (error) {
+    console.log(error)
+    res.json({
+        response: "500",
+        success: false,
+        error
+    })
 }
+},
+deleteCity: async (req, res, next)=>{
+    const { id } = req.params
+    
+    try {
+        req.body
+        console.log(req.body)
+      const newCity = await city.findOneAndDelete({_id:id})
+   
+    res.json({
+        response: deleteCity,
+        success: true,
+        error: null
+    })
+    } catch (error) {
+    console.log(error)
+    res.json({
+        response: "500",
+        success: false,
+        error
+    })
+}
+},
+
 
 }
 export default citiesController

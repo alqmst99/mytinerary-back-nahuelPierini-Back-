@@ -18,7 +18,10 @@ server.use(express.urlencoded())
 
 //listener server
 
-server.use('/api', indexRouter)
+server.use('/api', (req, res, next)=>{
+    console.log('hiciron una peticion al back a la ruta', req.url, "a la hora: ", new Date().toLocaleDateString() );
+    next()
+}, indexRouter)
 
     console.log('serverON')
     server.listen(process.env['PORT'], ()=> {
