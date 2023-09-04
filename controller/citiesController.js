@@ -11,10 +11,10 @@ getAllCities: async (req, res, next)=>{
     })
 },
 getCity: async (req, res, next)=>{
-    const allCities = await city.findbyId(id)
+    const getCity = await city.findbyId(id)
     console.log(allCities)
     res.json({
-        response: City,
+        response: getCity,
         success: true,
         error: null
     })
@@ -48,10 +48,10 @@ updateCity: async (req, res, next)=>{
     try {
         req.body
         console.log(req.body)
-      const newCity = await city.findOneAndUpdate({_id: id}, req.body, {new:true})
+      const updateCity = await city.findOneAndUpdate({_id: id}, req.body, {new:true})
    
     res.json({
-        response: UpdateCity,
+        response: updateCity,
         success: true,
         error: null
     })
@@ -70,7 +70,7 @@ deleteCity: async (req, res, next)=>{
     try {
         req.body
         console.log(req.body)
-      const newCity = await city.findOneAndDelete({_id:id})
+      const deleteCity = await city.findOneAndDelete({_id:id})
    
     res.json({
         response: deleteCity,
