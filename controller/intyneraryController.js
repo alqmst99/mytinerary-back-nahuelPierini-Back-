@@ -29,7 +29,7 @@ const intyneraryController = {
         try {
             const { id } = req.params
             const { name } = req.body
-            const getInty = await itynerary.findById(id)
+            const getInty = await intynerary.findById(id)
             console.log(getInty)
             res.json({
                 response: getOneInty,
