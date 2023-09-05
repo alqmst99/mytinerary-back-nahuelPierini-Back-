@@ -24,13 +24,13 @@ const intyneraryController = {
         }
 
     },
-    getInty: async (req, res, next) => {
+    getOneInty: async (req, res, next) => {
 
         try {
             const { id } = req.params
             const { name } = req.body
-            const getInty = await intynerary.findById(id)
-            console.log(getInty)
+            const getOneInty = await intynerary.findById(id)
+            console.log(getOneInty)
             res.json({
                 response: getOneInty,
                 success: true,
