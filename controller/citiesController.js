@@ -13,8 +13,8 @@ getAllCities: async (req, res, next)=>{
 getCity: async (req, res, next)=>{
     const { id } = req.params
     const { name } = req.body
-    const getCity = await city.findbyId(id)
-    console.log(allCities)
+    const getCity = await city.findById(id)
+    console.log(getCity)
     res.json({
         response: getCity,
         success: true,

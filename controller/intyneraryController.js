@@ -1,6 +1,6 @@
-import city from '../model/cities.js'
 import intynerary from '../model/itynerary.js'
-
+import city from '../model/cities.js'
+city._id
 const intyneraryController = {
     getAllIntys: async (req, res, next) => {
         try {
@@ -29,10 +29,10 @@ const intyneraryController = {
         try {
             const { id } = req.params
             const { name } = req.body
-            const getInty = await intynerary.findbyId(id)
+            const getInty = await itynerary.findById(id)
             console.log(getInty)
             res.json({
-                response: City,
+                response: getOneInty,
                 success: true,
                 error: null
             })
@@ -52,10 +52,11 @@ const intyneraryController = {
         const { id } = req.params
         const { name } = req.body
         try {
-            const city = await city.findOne({ city : req.body.city})
-            req.body
+            const c = await city.findOne({ city : req.body.city})
+            const query = {...req.body }
+            query.city = c._id
             console.log(req.body)
-            const newInty = await intynerary.create(req.body)
+            const newInty = await intynerary.create(query)
 
             res.json({
                 response: newInty,

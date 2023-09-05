@@ -1,20 +1,20 @@
-import { mongoose, Schema, model } from "mongoose"
+import { mongoose } from "mongoose"
 
 const itynerarySchema= mongoose.Schema({
     "title":{type: String, require:true},
     "author":{type: String, require:true},
     "imgU":{type: String, require:true},
-    "city":{type: Schema.Types.ObjectId, ref:'city', required: true},
+    "city":{type: mongoose.SchemaTypes.ObjectId, ref:'city'},
     "task":{type: String, require:true},
-    "duration":{type: Number, require:true},
+    "duration":{type: String, require:true},
     "like":{type: Number, require:true},
-    "Price":{type: Number, require:true, Range:(1, 5)}
+    "price":{type: Number, require:true, Range:(1, 5)}
 
 },{
     //opcion object
     timestamps:true
 })
-const itynerary= mongoose.model('ityneraries', itynerarySchema)
+const intynerary= mongoose.model('ityneraries', itynerarySchema)
 
 
-export default itynerary
+export default intynerary
