@@ -6,7 +6,6 @@ const userSchema= Schema({
     password: {type: String, required: true},
     lastName:{type: String, required: true},
     tel:{type:Number},
-    age:{type:Number, required:true},
     birth:{type:Number},
     desc:{type: String },
     photo: {type:String, default:'https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png'},

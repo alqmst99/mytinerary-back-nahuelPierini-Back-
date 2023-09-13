@@ -45,6 +45,16 @@ const authController={
        
 
     },
+    loginWithToken : (req,res   )=>{
+        const {email, photo,age}= req.user
+        res.status(200).json({
+            success:true,
+            userData:{email,photo,age},
+            token:token,
+            message:"sing in successfully"
+        })
+
+    }
    //logOut: async (req, res, next)=>{}
 }
 
