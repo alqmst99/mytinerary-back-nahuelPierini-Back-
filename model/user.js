@@ -3,8 +3,9 @@ import {model, Schema} from 'mongoose'
 const userSchema= Schema({
     email:{type: String, required: true},
     name: {type: String, required: true},
-    password: {type: String, required: true},
     lastName:{type: String, required: true},
+    password: {type: String, required: true},
+    country: {type: String, default:''},
     tel:{type:Number},
     birth:{type:Number},
     desc:{type: String },

@@ -19,7 +19,7 @@ server.use(express.urlencoded())
 //listener server
 
 server.use('/api', (req, res, next)=>{
-    console.log('hiciron una peticion al back a la ruta', req.url, "a la hora: ", new Date().toLocaleDateString() );
+    console.log('hicieron una peticion al back a la ruta', req.url, "a la hora: ", new Date().toLocaleDateString() );
     next()
 }, indexRouter)
 

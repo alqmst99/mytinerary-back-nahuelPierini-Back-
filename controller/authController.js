@@ -45,7 +45,7 @@ const authController={
        
 
     },
-    loginWithToken : (req,res   )=>{
+    loginWithToken : (req,res)=>{
         const {email, photo,age}= req.user
         res.status(200).json({
             success:true,
