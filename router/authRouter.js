@@ -11,7 +11,7 @@ const {singUp, login, loginWithToken}=authController
 
 
 
-authRouter.post('/singup', validator(singUpSchema) ,singUp)
-authRouter.get('/login', validator(loginSchema), emailExists, login)
+authRouter.post('/singup', validator(singUpSchema), emailExists, singUp)
+authRouter.post('/login', validator(loginSchema), login)
 authRouter.get('/token', passport.authenticate( 'jwt', {session:false} ) ,loginWithToken)
 export default authRouter

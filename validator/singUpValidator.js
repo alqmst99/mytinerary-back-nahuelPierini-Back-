@@ -24,6 +24,10 @@ export const singUpSchema = joi.object({
         "any.required": "the field is requiered"
     }),
     name: joi.string().required().min(3).max(15),
-    lastName: joi.string().optional().uri(),
+    lastName: joi.string().optional(),
+    age:joi.number().optional(),
+    photo:joi.string().optional(),
+    country: joi.string().optional(),
     verified: joi.boolean()
+    
 })

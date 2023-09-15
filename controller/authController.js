@@ -12,7 +12,7 @@ const authController={
             let body ={...req.body}
             body.password= passwordHash
             const newUser = await user.create(body)
-            return res.status(200).json({
+            return res.status(201).json({
                 success:true,
                 userData:newUser,
                 message: 'Sing Up successfully'
@@ -30,11 +30,11 @@ const authController={
         if(!userInDb){
             throw new Error ('no user exists with this email')
         }
-        let {email, photo, age} = userInDb
+        let {email, photo, age, name} = userInDb
         const token = jwt.sign({email, photo}, process.env.SECRET_KEY,{expiresIn: '1h'})
         return res.status(200).json({
             success:true,
-            userData: {email,photo,age},
+            userData: {email,photo,age, name},
             token:token,
             message: 'sing in successfully'
         })  
